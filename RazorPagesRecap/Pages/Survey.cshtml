@@ -1,0 +1,22 @@
+﻿@page
+@model RazorPagesRecap.Pages.SurveyModel
+@using RazorPagesRecap
+@namespace RazorPagesRecap.Pages
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@{
+}
+
+
+<form method="post">
+
+     <label asp-for="@Model.Validace.Name"></label><input input asp-for="@Model.Validace.Name" placeholder="křestní" />
+    <label asp-for="@Model.Validace.Surname"></label><input asp-for="@Model.Validace.Surname" placeholder="Přijmení" />
+    <label asp-for="@Model.Validace.EmailAddress"></label><input asp-for="@Model.Validace.EmailAddress" placeholder="Email" />
+    <label asp-for="@Model.Validace.IsFifteen"></label><input asp-for="@Model.Validace.IsFifteen"  placeholder="ano" />
+    <label asp-for="@Model.Validace.Home"></label><select asp-for="@Model.Validace.Home" asp-items="Html.GetEnumSelectList<RazorPagesRecap.InputModels.Home>()"></select>
+    <label asp-for="@Model.Validace.Gendre"></label><select asp-for="@Model.Validace.Gendre" asp-items="Html.GetEnumSelectList<RazorPagesRecap.InputModels.Gendre>()"></select>
+    <label asp-for="@Model.Validace.Pronouns"></label><input asp-for="@Model.Validace.Pronouns" placeholder=" Oslovení" />
+    <label asp-for="@Model.Validace.Description"></label><input asp-for="@Model.Validace.Description" placeholder="Příběh" />
+    <button type="submit">Odeslat</button>
+</form>
